@@ -1,0 +1,36 @@
+<div class="card mt-5">
+	<div class="card-body">
+		<div class="table-responsive  ">
+			<h4>Employee List</h4>
+			<a class="btn btn-success my-2" routerLink="/list/add" >New Employee</a>
+			<table id="datatable" class="table table-bordered table-hover">
+				<thead class="bg-dark text-light">
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Country</th>
+						<th>Position</th>
+						<th>Wage</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let employee of employees; let i = index">
+						<td>{{employee.id}}</td>
+						<td>{{employee.name}}</td>
+						<td>{{employee.age}}</td>
+						<td>{{employee.country}}</td>
+						<td>{{employee.position}}</td>
+						<td>{{employee.wage}}</td>
+						<td>
+							<a class="btn btn-primary btn-sm mr-1" routerLink="/list/edit/{{employee.id}}">Edit</a>
+							<button class="btn btn-danger btn-sm" (click)="onDelete(employee)">Delete</button>
+						</td>
+				
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
